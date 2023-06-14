@@ -1,0 +1,10 @@
+:host {
+  display: block;
+}
+
+.mdc-list-item {
+  &--activated,
+  &:focus::before {
+    background-color: rgb(240, 240, 240);
+  }
+}
