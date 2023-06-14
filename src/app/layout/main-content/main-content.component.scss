@@ -1,3 +1,10 @@
 :host {
-  display: block;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+mat-card {
+  padding: 20px;
 }

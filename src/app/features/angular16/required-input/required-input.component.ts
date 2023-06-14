@@ -1,13 +1,11 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-required-input',
   standalone: true,
-  imports: [CommonModule],
   templateUrl: './required-input.component.html',
-  styleUrls: ['./required-input.component.scss']
+  styleUrls: ['./required-input.component.scss'],
+  imports: [CommonModule],
 })
-export class RequiredInputComponent {
-
-}
+export class RequiredInputComponent {}
