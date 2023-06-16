@@ -1,4 +1,11 @@
-:host {
+:host::ng-deep {
   display: block;
+
+  .mat-expansion-panel-body {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+  }
 }
+
 

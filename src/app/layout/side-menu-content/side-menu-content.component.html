@@ -1,7 +1,6 @@
 <mat-nav-list>
-  <h3>Angular 16</h3>
-  <app-nav-link [path]="AppRoutes.Angular_16_Signals">Signals</app-nav-link>
-  <app-nav-link [path]="AppRoutes.Angular_16_RequiredInput">Required input</app-nav-link>
-  <app-nav-link [path]="AppRoutes.Angular_16_DestroyRef">Destroy ref</app-nav-link>
-  <mat-divider></mat-divider>
+  <mat-accordion multi>
+    <app-angular-sixteen-section></app-angular-sixteen-section>
+    <app-angular-fifteen-section></app-angular-fifteen-section>
+  </mat-accordion>
 </mat-nav-list>

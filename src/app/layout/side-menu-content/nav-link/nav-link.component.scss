@@ -3,6 +3,9 @@
 }
 
 .mdc-list-item {
+  padding-left: 35px;
+  padding-right: 25px;
+
   &--activated,
   &:focus::before {
     background-color: rgb(240, 240, 240);

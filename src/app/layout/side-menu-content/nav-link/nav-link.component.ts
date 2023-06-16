@@ -16,4 +16,8 @@ export class NavLinkComponent {
   @Input({ required: true }) path!: AppRoutes;
 
   constructor(protected navigationService: NavigationService) {}
+
+  get activated() {
+    return this.navigationService.activeLink === this.path;
+  }
 }
