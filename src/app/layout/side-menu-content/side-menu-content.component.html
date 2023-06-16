@@ -1,6 +1,10 @@
 <mat-nav-list>
   <mat-accordion multi>
-    <app-angular-sixteen-section></app-angular-sixteen-section>
-    <app-angular-fifteen-section></app-angular-fifteen-section>
+    <app-nav-panel [title]="'Angular 16'">
+      <app-nav-link [path]="AppRoutes.Angular_16_Signals">Signals</app-nav-link>
+      <app-nav-link [path]="AppRoutes.Angular_16_RequiredInput">Required @Input()</app-nav-link>
+      <app-nav-link [path]="AppRoutes.Angular_16_DestroyRef">Destroy ref</app-nav-link>
+    </app-nav-panel>
+    <app-nav-panel [title]="'Angular 15'"> </app-nav-panel>
   </mat-accordion>
 </mat-nav-list>
