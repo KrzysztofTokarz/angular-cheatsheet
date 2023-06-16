@@ -1,0 +1,20 @@
+<p>
+  A signal is a wrapper around a value that can notify interested consumers when that value changes. Signals can contain
+  any value, from simple primitives to complex data structures.
+</p>
+<p>
+  A signal's value is always read through a getter function, which allows Angular to track where the signal is used.
+</p>
+<p>Signals may be either writable or read-only.</p>
+
+<h3 class="mt-5">Live example:</h3>
+<h3>Please open console!</h3>
+
+<div>
+  <app-input [ngModel]="text()" (ngModelChange)="text.set($event)"></app-input>
+  <p>I am the counter, click button below to increment me - {{ counter() }}</p>
+  <p>I am doubled counter - {{ doubleCounter() }}</p>
+  <p>I am the static counter, i will not increment - {{ staticCounter }}</p>
+  <p>I am computed text from input and counter - {{ textFromInputAndCounter() }}</p>
+</div>
+<app-button (click)="increment()">Increase counter</app-button>
