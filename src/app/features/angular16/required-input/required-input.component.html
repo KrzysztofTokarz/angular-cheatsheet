@@ -1,0 +1,10 @@
+<p>Starting from Angular 16 there was new option added to @Input() property to define required properties</p>
+<p>The signature looks like this:</p>
+<p>{{ signature }}</p>
+
+<p class="mt-4">Check code for example in "app/features/angular16/required-input/required-input.component.html"</p>
+
+<app-required-input-example [someRequiredProperty]="20"></app-required-input-example>
+
+<!-- below code will throw error because there is no required property supplied, uncomment to see -->
+<!-- <app-required-input-example></app-required-input-example> -->
