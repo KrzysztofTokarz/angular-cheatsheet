@@ -3,6 +3,7 @@ import { Routes } from '@angular/router';
 export enum AppRoutes {
   Angular_16_Signals = 'Angular_16_Signals',
   Angular_16_RequiredInput = 'Angular_16_RequiredInput',
+  Angular_16_TransformInput = 'Angular_16_TransformInput',
   Angular_16_DestroyRef = 'Angular_16_DestroyRef',
 }
 
@@ -18,6 +19,11 @@ export const routes: Routes = [
     path: AppRoutes.Angular_16_RequiredInput,
     loadComponent: () =>
       import('./features/angular16/required-input/required-input.component').then((m) => m.RequiredInputComponent),
+  },
+  {
+    path: AppRoutes.Angular_16_TransformInput,
+    loadComponent: () =>
+      import('./features/angular16/transform-input/transform-input.component').then((m) => m.TransformInputComponent),
   },
   {
     path: AppRoutes.Angular_16_DestroyRef,
