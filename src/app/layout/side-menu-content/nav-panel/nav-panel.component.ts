@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, ContentChildren, Input, QueryList, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ContentChildren, Input, QueryList, ViewChild } from '@angular/core';
 import { MatExpansionModule, MatExpansionPanel } from '@angular/material/expansion';
 import { NavLinkComponent } from '../nav-link/nav-link.component';
 
@@ -10,7 +10,7 @@ import { NavLinkComponent } from '../nav-link/nav-link.component';
   templateUrl: './nav-panel.component.html',
   styleUrls: ['./nav-panel.component.scss'],
 })
-export class NavPanelComponent {
+export class NavPanelComponent implements AfterViewInit {
   @ContentChildren(NavLinkComponent) navLinksComponents!: QueryList<NavLinkComponent>;
   @ViewChild(MatExpansionPanel) panel!: MatExpansionPanel;
 

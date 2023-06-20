@@ -1,0 +1,13 @@
+<p>
+  Signals allows us to use equality function to compare values and determine if we need an update or not, click the
+  button below and check that we don`t have new logs in the console from the effect
+</p>
+<app-button (click)="setEqualObject()">Set equal object</app-button>
+
+<p class="mt-4">Sometimes we need to read value of signal inside of effect, but do not track it`s value, then we can use untracked() function to mark signal as untracked</p>
+<app-input class="me-2" [ngModel]="trackedInputValue()" (ngModelChange)="trackedInputValue.set($event)"></app-input>
+<app-input [ngModel]="untrackedInputValue()" (ngModelChange)="untrackedInputValue.set($event)"></app-input>
+
+<p class="mt-4">Effects has also cleanUp function as their first parameter inside of a callback</p>
+<app-button (click)="showCleanupComp = !showCleanupComp">Show/hide component</app-button>
+<app-signals-cleanup *ngIf="showCleanupComp"></app-signals-cleanup>
