@@ -20,4 +20,8 @@ export class NavLinkComponent {
   get activated() {
     return this.navigationService.activeLink === this.path;
   }
+
+  clearConsole() {
+    console.clear();
+  }
 }
