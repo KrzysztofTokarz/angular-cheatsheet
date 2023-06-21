@@ -14,6 +14,7 @@ import { MatInputModule } from '@angular/material/input';
 export class InputComponent implements ControlValueAccessor {
   @Input() label = ''
   @Input() placeholder = ''
+  @Input() type: string = 'text'
 
   private onChange = (value: string) => {};
   private onTouch = (value: string) => {};

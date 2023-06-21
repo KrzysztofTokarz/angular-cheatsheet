@@ -1,4 +1,4 @@
 <mat-form-field [appearance]="'outline'">
   <mat-label *ngIf="label">{{label}}</mat-label>
-  <input matInput [ngModel]="_value" (ngModelChange)="onInput($event)" [placeholder]="placeholder"/>
+  <input matInput [ngModel]="_value" (ngModelChange)="onInput($event)" [placeholder]="placeholder" [type]="type"/>
 </mat-form-field>

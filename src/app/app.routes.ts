@@ -8,6 +8,7 @@ export enum AppRoutes {
   Angular_16_RouteResolver = 'Angular_16_RouteResolver',
   Angular_16_SelfClosingTags = 'Angular_16_SelfClosingTags',
   Angular_15_LazyRoutes = 'Angular_15_LazyRoutes',
+  Angular_15_DirectiveComposition = 'Angular_15_DirectiveComposition',
 }
 
 export const defaultRoute = AppRoutes.Angular_16_Signals;
@@ -48,6 +49,13 @@ export const routes: Routes = [
   {
     path: AppRoutes.Angular_15_LazyRoutes,
     loadChildren: () => import('./features/angular15/lazy-routes/lazy-routes.routes').then((m) => m.LAZY_ROUTES),
+  },
+  {
+    path: AppRoutes.Angular_15_DirectiveComposition,
+    loadComponent: () =>
+      import('./features/angular15/directive-composition/directive-composition.component').then(
+        (m) => m.DirectiveCompositionComponent
+      ),
   },
   { path: '**', redirectTo: defaultRoute, pathMatch: 'full' },
 ];

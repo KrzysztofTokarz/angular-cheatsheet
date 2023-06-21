@@ -1,0 +1,40 @@
+<p>
+  Starting from Angular 15 we can use the directive composition API that lets us apply directives to a component's host
+  element from within the component TypeScript class.
+</p>
+<p>We can do it by adding hostDirectives property inside of @Component() decorator object</p>
+<p>Directives used in hostDirectives must be standalone</p>
+
+<h3 class="mt-5">Live example:</h3>
+<h3>Please open console!</h3>
+
+<p class="mt-4">Click any place inside the black border and check the console</p>
+<p>All clicks are handled by LoggerDirective attached to the component by hostDirectives property</p>
+<app-directive-composition-logger></app-directive-composition-logger>
+
+<p class="mt-4">
+  When applying hostDirectives to component, the inputs and outputs from the host directives are not included in
+  component's API by default.
+</p>
+<p>We need to explicitly define them by expanding the hostDirectives entry</p>
+<p>We can also alias these properties like in our case: "doubledNumber:out"</p>
+<p>Change the number below and check logs in the console to see how the directive is handling calculations:</p>
+<app-input [type]="'number'" [(ngModel)]="someNumber"></app-input>
+<app-directive-composition-inputs-outputs
+  [someNumber]="someNumber"
+  (out)="showDoubledNumber($event)"
+></app-directive-composition-inputs-outputs>
+
+<p class="mt-4">
+  We can also define hostDirectives for other directives, this enables us to use multiple behaviors of them, each of
+  these directives host bindings apply to the host element
+</p>
+<p>Click button below to show/hide component that uses those directives</p>
+<app-button (click)="showNestedDirectivesComponent = !showNestedDirectivesComponent">Show/hide component</app-button>
+<div class="mt-3" *ngIf="showNestedDirectivesComponent">
+  <p>Click any place inside the black border and check the console</p>
+  <app-directive-composition-nested></app-directive-composition-nested>
+</div>
+
+<p class="mt-4">We can also inject directive instances inside our component!</p>
+<app-directive-composition-injected></app-directive-composition-injected>
