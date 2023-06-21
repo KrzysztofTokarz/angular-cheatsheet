@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Router } from '@angular/router';
-import { distinctUntilChanged, filter, map } from 'rxjs';
+import { AsyncSubject, distinctUntilChanged, filter, map } from 'rxjs';
 import { AppRoutes } from '../app.routes';
 
 @Injectable({
@@ -9,6 +9,7 @@ import { AppRoutes } from '../app.routes';
 })
 export class NavigationService {
   activeLink?: AppRoutes;
+  activeLinkSetDone$ = new AsyncSubject<void>();
 
   constructor(router: Router) {
     router.events
@@ -19,8 +20,10 @@ export class NavigationService {
         takeUntilDestroyed()
       )
       .subscribe((url) => {
-        // remove the '/' sign at the beggining
-        this.activeLink = url.substring(1) as AppRoutes;
+        // remove the '/' sign at the beggining and take first segment of url
+        this.activeLink = url.substring(1).split('/')[0] as AppRoutes;
+        this.activeLinkSetDone$.next();
+        this.activeLinkSetDone$.complete();
       });
   }
 }

@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, ContentChildren, Input, QueryList, ViewChild } from '@angular/core';
 import { MatExpansionModule, MatExpansionPanel } from '@angular/material/expansion';
+import { take } from 'rxjs';
+import { NavigationService } from '../../navigation.service';
 import { NavLinkComponent } from '../nav-link/nav-link.component';
 
 @Component({
@@ -16,11 +18,15 @@ export class NavPanelComponent implements AfterViewInit {
 
   @Input({ required: true }) title!: string;
 
+  constructor(private navigationService: NavigationService) {}
+
   ngAfterViewInit(): void {
-    setTimeout(() => {
-      if (this.navLinksComponents.some((x) => x.activated)) {
-        this.panel.open();
-      }
-    }, 100);
+    this.navigationService.activeLinkSetDone$.pipe(take(1)).subscribe(() => {
+      setTimeout(() => {
+        if (this.navLinksComponents.some((x) => x.activated)) {
+          this.panel.open();
+        }
+      }, 100);
+    });
   }
 }

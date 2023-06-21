@@ -5,6 +5,8 @@ export enum AppRoutes {
   Angular_16_RequiredInput = 'Angular_16_RequiredInput',
   Angular_16_TransformInput = 'Angular_16_TransformInput',
   Angular_16_DestroyRef = 'Angular_16_DestroyRef',
+  Angular_16_RouteResolver = 'Angular_16_RouteResolver',
+  Angular_16_SelfClosingTags = 'Angular_16_SelfClosingTags',
 }
 
 export const defaultRoute = AppRoutes.Angular_16_Signals;
@@ -29,6 +31,18 @@ export const routes: Routes = [
     path: AppRoutes.Angular_16_DestroyRef,
     loadComponent: () =>
       import('./features/angular16/destroy-ref/destroy-ref.component').then((m) => m.DestroyRefComponent),
+  },
+  {
+    path: AppRoutes.Angular_16_RouteResolver,
+    loadChildren: () =>
+      import('./features/angular16/route-resolver/route-resolver-routes').then((m) => m.ROUTE_RESOLVER_ROUTES),
+  },
+  {
+    path: AppRoutes.Angular_16_SelfClosingTags,
+    loadComponent: () =>
+      import('./features/angular16/self-closing-tags/self-closing-tags.component').then(
+        (m) => m.SelfClosingTagsComponent
+      ),
   },
   { path: '**', redirectTo: defaultRoute, pathMatch: 'full' },
 ];

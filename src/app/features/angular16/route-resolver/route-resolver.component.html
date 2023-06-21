@@ -1,0 +1,5 @@
+<p>Starting from Angular 16 we can pass data to a routing component’s inputs</p>
+<p>In order to make it work, we need to call withComponentInputBinding() as the second parameter of provideRouter</p>
+<p class="mt-4">Click button below to load component</p>
+<app-button (click)="loadChild()" class="mb-3">Load child</app-button>
+<router-outlet> </router-outlet>
