@@ -29,12 +29,10 @@
   We can also define hostDirectives for other directives, this enables us to use multiple behaviors of them, each of
   these directives host bindings apply to the host element
 </p>
-<p>Click button below to show/hide component that uses those directives</p>
-<app-button (click)="showNestedDirectivesComponent = !showNestedDirectivesComponent">Show/hide component</app-button>
-<div class="mt-3" *ngIf="showNestedDirectivesComponent">
-  <p>Click any place inside the black border and check the console</p>
-  <app-directive-composition-nested></app-directive-composition-nested>
-</div>
+<p>Click any place inside the black border and check the console</p>
+<app-directive-composition-nested class="mt-3"></app-directive-composition-nested>
 
-<p class="mt-4">We can also inject directive instances inside our component!</p>
+<p class="mt-4">We can also inject directive instances inside our component and define providers for them!</p>
+<p>If a component or directive with hostDirectives and those host directives both provide the same injection token, the providers defined by class with hostDirectives take precedence over providers defined by the host directives</p>
+<p>In this case, we want to disable click logs to the console so we provide LOG_CLICKS injection token value as false</p>
 <app-directive-composition-injected></app-directive-composition-injected>

@@ -1,4 +1,6 @@
-import { Directive, HostListener } from '@angular/core';
+import { Directive, HostListener, Inject, InjectionToken } from '@angular/core';
+
+export const LOG_CLICKS = new InjectionToken<boolean>('log clicks');
 
 @Directive({
   selector: '[appDeepNested]',
@@ -7,8 +9,12 @@ import { Directive, HostListener } from '@angular/core';
 export class DeepNestedDirective {
   prop = 'property from DeepNestedDirective';
 
+  constructor(@Inject(LOG_CLICKS) private logClicks: boolean) {}
+
   @HostListener('click') onClick() {
-    console.log('click binding from DeepNestedDirective');
+    if (this.logClicks) {
+      console.log('click binding from DeepNestedDirective');
+    }
   }
 }
 
@@ -20,8 +26,12 @@ export class DeepNestedDirective {
 export class NestedDirective {
   prop = 'property from NestedDirective';
 
+  constructor(@Inject(LOG_CLICKS) private logClicks: boolean) {}
+
   @HostListener('click') onClick() {
-    console.log('click binding from NestedDirective');
+    if (this.logClicks) {
+      console.log('click binding from NestedDirective');
+    }
   }
 }
 
@@ -29,11 +39,16 @@ export class NestedDirective {
   selector: '[appRoot]',
   standalone: true,
   hostDirectives: [NestedDirective],
+  providers: [{ provide: LOG_CLICKS, useValue: true }],
 })
 export class RootDirective {
   prop = 'property from RootDirective';
 
+  constructor(@Inject(LOG_CLICKS) private logClicks: boolean) {}
+
   @HostListener('click') onClick() {
-    console.log('click binding from RootDirective');
+    if (this.logClicks) {
+      console.log('click binding from RootDirective');
+    }
   }
 }

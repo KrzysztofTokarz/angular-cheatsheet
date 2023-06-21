@@ -25,7 +25,6 @@ import { DirectiveCompositionNestedComponent } from './directive-composition-nes
     ]
 })
 export class DirectiveCompositionComponent {
-  showNestedDirectivesComponent = false;
   someNumber = 1;
 
   showDoubledNumber(value: number) {
