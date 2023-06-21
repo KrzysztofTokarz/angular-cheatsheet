@@ -9,6 +9,7 @@ export enum AppRoutes {
   Angular_16_SelfClosingTags = 'Angular_16_SelfClosingTags',
   Angular_15_LazyRoutes = 'Angular_15_LazyRoutes',
   Angular_15_DirectiveComposition = 'Angular_15_DirectiveComposition',
+  Angular_15_FunctionalRouterGuards = 'Angular_15_FunctionalRouterGuards',
 }
 
 export const defaultRoute = AppRoutes.Angular_16_Signals;
@@ -55,6 +56,13 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./features/angular15/directive-composition/directive-composition.component').then(
         (m) => m.DirectiveCompositionComponent
+      ),
+  },
+  {
+    path: AppRoutes.Angular_15_FunctionalRouterGuards,
+    loadChildren: () =>
+      import('./features/angular15/functional-router-guards/funtional-router-guards.routes').then(
+        (m) => m.FUNCTONAL_ROUTER_GUARDS_ROUTES
       ),
   },
   { path: '**', redirectTo: defaultRoute, pathMatch: 'full' },

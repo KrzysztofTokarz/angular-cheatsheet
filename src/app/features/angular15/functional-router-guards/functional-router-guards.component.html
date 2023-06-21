@@ -1,0 +1,18 @@
+<p>Starting from Angular 15 we can use functional router guards to reduce boilerplate code</p>
+
+<h3 class="mt-5">Live example:</h3>
+<app-button
+  class="mb-2"
+  (click)="functionalRouterGuardsService.isNavigationAllowed = !functionalRouterGuardsService.isNavigationAllowed"
+>
+  {{ functionalRouterGuardsService.isNavigationAllowed ? 'Disable navigation' : 'Allow navigation' }}
+</app-button>
+<p *ngIf="functionalRouterGuardsService.isNavigationAllowed">The navigation is allowed, click buttons below to navigate between routes</p>
+<p *ngIf="!functionalRouterGuardsService.isNavigationAllowed">The navigation is disabled and blocked by canActivate guard</p>
+
+<div class="d-flex gap-2">
+  <app-button routerLink="first-child">First child</app-button>
+  <app-button routerLink="second-child">Second child</app-button>
+  <app-button routerLink="third-child">Third child</app-button>
+</div>
+<router-outlet></router-outlet>
