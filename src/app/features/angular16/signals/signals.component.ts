@@ -13,7 +13,7 @@ import { SignalsAdvancedTopicsComponent } from "./signals-advanced-topics/signal
     styleUrls: ['./signals.component.scss'],
     imports: [CommonModule, ButtonComponent, InputComponent, FormsModule, SignalsAdvancedTopicsComponent]
 })
-export class SignalsComponent {
+export default class SignalsComponent {
   counter = signal(1);
   text = signal('Some text');
   doubleCounter = computed(() => this.counter() * 2);

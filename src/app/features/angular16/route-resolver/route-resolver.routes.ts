@@ -4,7 +4,7 @@ import { RouteResolverComponent } from './route-resolver.component';
 
 const someAsyncOperation = <T>(value: T): Observable<T> => of(value).pipe(delay(200));
 
-export const ROUTE_RESOLVER_ROUTES: Routes = [
+const routes: Routes = [
   {
     path: '',
     component: RouteResolverComponent,
@@ -23,3 +23,5 @@ export const ROUTE_RESOLVER_ROUTES: Routes = [
     ],
   },
 ];
+
+export default routes;

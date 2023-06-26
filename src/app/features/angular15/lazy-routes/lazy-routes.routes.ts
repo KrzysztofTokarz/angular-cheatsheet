@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { LazyRoutesComponent } from './lazy-routes.component';
 
-export const LAZY_ROUTES: Routes = [
+const routes: Routes = [
   {
     path: '',
     component: LazyRoutesComponent,
@@ -30,3 +30,5 @@ export const LAZY_ROUTES: Routes = [
     ],
   },
 ];
+
+export default routes;

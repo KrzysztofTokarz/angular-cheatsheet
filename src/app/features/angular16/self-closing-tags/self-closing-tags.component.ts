@@ -9,6 +9,6 @@ import { SelfClosingComponentComponent } from "./self-closing-component/self-clo
     styleUrls: ['./self-closing-tags.component.scss'],
     imports: [CommonModule, SelfClosingComponentComponent]
 })
-export class SelfClosingTagsComponent {
+export default class SelfClosingTagsComponent {
   readonly differenceDesc = 'So we can write <app-self-closing-component /> instead of <app-self-closing-component></app-self-closing-component>'
 }

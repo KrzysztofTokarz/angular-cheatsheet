@@ -24,7 +24,7 @@ import { DirectiveCompositionNestedComponent } from './directive-composition-nes
         DirectiveCompositionInjectedComponent
     ]
 })
-export class DirectiveCompositionComponent {
+export default class DirectiveCompositionComponent {
   someNumber = 1;
 
   showDoubledNumber(value: number) {

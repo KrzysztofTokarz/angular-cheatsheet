@@ -9,6 +9,6 @@ import { RequiredInputExampleComponent } from "./required-input-example/required
     styleUrls: ['./required-input.component.scss'],
     imports: [CommonModule, RequiredInputExampleComponent]
 })
-export class RequiredInputComponent {
+export default class RequiredInputComponent {
     readonly signature = '@Input({ required: true }) someRequiredProperty!: number'
 }

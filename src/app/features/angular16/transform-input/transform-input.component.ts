@@ -10,6 +10,6 @@ import { InputType, TransformInputExampleComponent } from "./transform-input-exa
     styleUrls: ['./transform-input.component.scss'],
     imports: [CommonModule, ButtonComponent, TransformInputExampleComponent]
 })
-export class TransformInputComponent {
+export default class TransformInputComponent {
   value: InputType;
 }

@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 import { FunctionalRouterGuardsComponent } from './functional-router-guards.component';
 import { FunctionalRouterGuardsService } from './functional-router-guards.service';
 
-export const FUNCTONAL_ROUTER_GUARDS_ROUTES: Routes = [
+const routes: Routes = [
   {
     path: '',
     component: FunctionalRouterGuardsComponent,
@@ -35,3 +35,5 @@ export const FUNCTONAL_ROUTER_GUARDS_ROUTES: Routes = [
     ],
   },
 ];
+
+export default routes;

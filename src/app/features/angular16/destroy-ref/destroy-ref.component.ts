@@ -20,7 +20,7 @@ import { DestroyRefThirdComponent } from './destroy-ref-third/destroy-ref-third.
     DestroyRefFourthComponent,
   ],
 })
-export class DestroyRefComponent {
+export default class DestroyRefComponent {
   showFirst = false;
   showSecond = false;
   showThird = false;
