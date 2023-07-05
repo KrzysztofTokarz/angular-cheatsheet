@@ -1,18 +1,18 @@
 <mat-nav-list>
   <mat-accordion multi>
-    <app-nav-panel [title]="'Angular 16'">
-      <app-nav-link [path]="AppRoutes.Angular_16_Signals">Signals</app-nav-link>
-      <app-nav-link [path]="AppRoutes.Angular_16_RequiredInput">Required @Input()</app-nav-link>
-      <app-nav-link [path]="AppRoutes.Angular_16_TransformInput">Transform @Input()</app-nav-link>
-      <app-nav-link [path]="AppRoutes.Angular_16_DestroyRef">Destroy ref</app-nav-link>
-      <app-nav-link [path]="AppRoutes.Angular_16_RouteResolver">Route resolver</app-nav-link>
-      <app-nav-link [path]="AppRoutes.Angular_16_SelfClosingTags">Self closing tags</app-nav-link>
+    <app-nav-panel [title]="'Angular 16'" [activeLink]="activeLink">
+      <app-nav-link [activeLink]="activeLink" [path]="AppRoutes.Angular_16_Signals" >Signals</app-nav-link>
+      <app-nav-link [activeLink]="activeLink" [path]="AppRoutes.Angular_16_RequiredInput">Required @Input()</app-nav-link>
+      <app-nav-link [activeLink]="activeLink" [path]="AppRoutes.Angular_16_TransformInput">Transform @Input()</app-nav-link>
+      <app-nav-link [activeLink]="activeLink" [path]="AppRoutes.Angular_16_DestroyRef">Destroy ref</app-nav-link>
+      <app-nav-link [activeLink]="activeLink" [path]="AppRoutes.Angular_16_RouteResolver">Route resolver</app-nav-link>
+      <app-nav-link [activeLink]="activeLink" [path]="AppRoutes.Angular_16_SelfClosingTags">Self closing tags</app-nav-link>
     </app-nav-panel>
-    <app-nav-panel [title]="'Angular 15'">
-      <app-nav-link [path]="AppRoutes.Angular_15_LazyRoutes">Lazy routes</app-nav-link>
-      <app-nav-link [path]="AppRoutes.Angular_15_DirectiveComposition">Directive composition</app-nav-link>
-      <app-nav-link [path]="AppRoutes.Angular_15_FunctionalRouterGuards">Functional router guards</app-nav-link>
-      <app-nav-link [path]="AppRoutes.Angular_15_RouterDefaultImports">Router default imports</app-nav-link>
+    <app-nav-panel [title]="'Angular 15'" [activeLink]="activeLink">
+      <app-nav-link [activeLink]="activeLink" [path]="AppRoutes.Angular_15_LazyRoutes">Lazy routes</app-nav-link>
+      <app-nav-link [activeLink]="activeLink" [path]="AppRoutes.Angular_15_DirectiveComposition">Directive composition</app-nav-link>
+      <app-nav-link [activeLink]="activeLink" [path]="AppRoutes.Angular_15_FunctionalRouterGuards">Functional router guards</app-nav-link>
+      <app-nav-link [activeLink]="activeLink" [path]="AppRoutes.Angular_15_RouterDefaultImports">Router default imports</app-nav-link>
     </app-nav-panel>
   </mat-accordion>
 </mat-nav-list>

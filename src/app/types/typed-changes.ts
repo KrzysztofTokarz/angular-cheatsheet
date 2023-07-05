@@ -9,7 +9,7 @@ type ExcludeFunctionPropertyNames<T extends object> = MarkFunctionPropertyNames<
 type ExcludeFunctions<T extends object> = Pick<T, ExcludeFunctionPropertyNames<T>>;
 
 export type TypedChanges<Component extends object, Props = ExcludeFunctions<Component>> = {
-  [Key in keyof Props]: {
+  [Key in keyof Props]?: {
     previousValue: Props[Key];
     currentValue: Props[Key];
     firstChange: boolean;

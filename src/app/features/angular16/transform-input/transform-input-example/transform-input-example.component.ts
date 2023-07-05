@@ -22,7 +22,7 @@ export class TransformInputExampleComponent {
   @Input({ transform: transformBoolean }) alwaysBoolean: InputType;
 
   ngOnChanges(changes: TypedChanges<TransformInputExampleComponent>) {
-    if (!changes.alwaysBoolean.isFirstChange()) {
+    if (!changes.alwaysBoolean?.isFirstChange()) {
       console.log('I will always be boolean value', this.alwaysBoolean);
     }
   }
