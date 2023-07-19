@@ -1,5 +1,15 @@
 <p>Starting from Angular 16 we can pass data to a routing component’s inputs</p>
-<p>In order to make it work, we need to call withComponentInputBinding() as the second parameter of provideRouter</p>
-<p class="mt-4">Click button below to load component</p>
-<app-button (click)="loadChild()" class="mb-3">Load child</app-button>
-<router-outlet> </router-outlet>
+<p>
+  In order to make it work, we need to call <strong>withComponentInputBinding()</strong> as the second parameter of
+  <strong>provideRouter</strong>
+</p>
+
+<app-live-example>
+  <p>Click button below to load component</p>
+  <p>Component is loaded with small delay due to fake async operation in <strong>route-resolver.routes.ts</strong></p>
+  <div class="d-flex gap-2 mb-3">
+    <app-button (click)="loadChild()">Load child</app-button>
+    <app-button *ngIf="router.url.includes(childRoutePart)" routerLink="./">Reset</app-button>
+  </div>
+  <router-outlet> </router-outlet>
+</app-live-example>

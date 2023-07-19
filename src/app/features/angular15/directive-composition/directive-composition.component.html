@@ -2,37 +2,44 @@
   Starting from Angular 15 we can use the directive composition API that lets us apply directives to a component's host
   element from within the component TypeScript class.
 </p>
-<p>We can do it by adding hostDirectives property inside of @Component() decorator object</p>
-<p>Directives used in hostDirectives must be standalone</p>
-
-<h3 class="mt-5">Live example:</h3>
-<h3>Please open console!</h3>
-
-<p class="mt-4">Click any place inside the black border and check the console</p>
-<p>All clicks are handled by LoggerDirective attached to the component by hostDirectives property</p>
-<app-directive-composition-logger></app-directive-composition-logger>
-
-<p class="mt-4">
-  When applying hostDirectives to component, the inputs and outputs from the host directives are not included in
-  component's API by default.
+<p>
+  We can do it by adding <strong>hostDirectives</strong> property inside of <strong>@Component()</strong> decorator
+  object
 </p>
-<p>We need to explicitly define them by expanding the hostDirectives entry</p>
-<p>We can also alias these properties like in our case: "doubledNumber:out"</p>
-<p>Change the number below and check logs in the console to see how the directive is handling calculations:</p>
-<app-input [type]="'number'" [(ngModel)]="someNumber"></app-input>
-<app-directive-composition-inputs-outputs
-  [someNumber]="someNumber"
-  (out)="showDoubledNumber($event)"
-></app-directive-composition-inputs-outputs>
+<p>Directives used in hostDirectives <strong>must be standalone</strong></p>
 
-<p class="mt-4">
-  We can also define hostDirectives for other directives, this enables us to use multiple behaviors of them, each of
-  these directives host bindings apply to the host element
-</p>
-<p>Click any place inside the black border and check the console</p>
-<app-directive-composition-nested class="mt-3"></app-directive-composition-nested>
+<app-live-example [openConsole]="true">
+  <p class="mt-4">Click any place inside the black border and check the console</p>
+  <p>All clicks are handled by LoggerDirective attached to the component by hostDirectives property</p>
+  <app-directive-composition-logger></app-directive-composition-logger>
 
-<p class="mt-4">We can also inject directive instances inside our component and define providers for them!</p>
-<p>If a component or directive with hostDirectives and those host directives both provide the same injection token, the providers defined by class with hostDirectives take precedence over providers defined by the host directives</p>
-<p>In this case, we want to disable click logs to the console so we provide LOG_CLICKS injection token value as false</p>
-<app-directive-composition-injected></app-directive-composition-injected>
+  <p class="mt-4">
+    When applying hostDirectives to component, the inputs and outputs from the host directives are not included in
+    component's API by default.
+  </p>
+  <p>We need to explicitly define them by <strong>expanding the hostDirectives entry</strong></p>
+  <p>We can also alias these properties like in our case: "<strong>doubledNumber:out</strong>"</p>
+  <p>Change the number below and check logs in the console to see how the directive is handling calculations:</p>
+  <app-input [type]="'number'" [(ngModel)]="someNumber"></app-input>
+  <app-directive-composition-inputs-outputs
+    [someNumber]="someNumber"
+    (out)="showDoubledNumber($event)"
+  ></app-directive-composition-inputs-outputs>
+
+  <p class="mt-4">
+    We can also define hostDirectives for other directives, this enables us to use <strong>multiple behaviors</strong> of them, each of
+    these directives host bindings apply to the host element
+  </p>
+  <p>Click any place inside the black border and check the console</p>
+  <app-directive-composition-nested class="mt-3"></app-directive-composition-nested>
+
+  <p class="mt-4">We can also <strong>inject</strong> directive instances inside our component and define providers for them!</p>
+  <p>
+    If a component or directive with hostDirectives and those host directives both provide the same injection token, the
+    providers defined by class with hostDirectives take precedence over providers defined by the host directives
+  </p>
+  <p>
+    In this case, we want to disable click logs to the console so we provide <strong>LOG_CLICKS</strong> injection token value as false
+  </p>
+  <app-directive-composition-injected></app-directive-composition-injected>
+</app-live-example>

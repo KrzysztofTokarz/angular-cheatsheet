@@ -4,6 +4,7 @@ import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 import { FormsModule } from '@angular/forms';
 import { ButtonComponent } from '../../../components/button/button.component';
 import { InputComponent } from '../../../components/input/input.component';
+import { LiveExampleComponent } from "../../../components/live-example/live-example.component";
 import { SignalsAdvancedTopicsComponent } from "./signals-advanced-topics/signals-advanced-topics.component";
 
 @Component({
@@ -11,7 +12,7 @@ import { SignalsAdvancedTopicsComponent } from "./signals-advanced-topics/signal
     standalone: true,
     templateUrl: './signals.component.html',
     styleUrls: ['./signals.component.scss'],
-    imports: [CommonModule, ButtonComponent, InputComponent, FormsModule, SignalsAdvancedTopicsComponent]
+    imports: [CommonModule, ButtonComponent, InputComponent, FormsModule, SignalsAdvancedTopicsComponent, LiveExampleComponent]
 })
 export default class SignalsComponent {
   counter = signal(1);

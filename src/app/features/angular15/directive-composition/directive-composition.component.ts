@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ButtonComponent } from '../../../components/button/button.component';
 import { InputComponent } from '../../../components/input/input.component';
+import { LiveExampleComponent } from "../../../components/live-example/live-example.component";
 import { DirectiveCompositionInjectedComponent } from "./directive-composition-injected/directive-composition-injected.component";
 import { DirectiveCompositionInputsOutputsComponent } from './directive-composition-inputs-outputs/directive-composition-inputs-outputs.component';
 import { DirectiveCompositionLoggerComponent } from './directive-composition-logger/directive-composition-logger.component';
@@ -21,7 +22,8 @@ import { DirectiveCompositionNestedComponent } from './directive-composition-nes
         FormsModule,
         DirectiveCompositionNestedComponent,
         ButtonComponent,
-        DirectiveCompositionInjectedComponent
+        DirectiveCompositionInjectedComponent,
+        LiveExampleComponent
     ]
 })
 export default class DirectiveCompositionComponent {

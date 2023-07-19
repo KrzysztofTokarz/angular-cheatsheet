@@ -7,19 +7,18 @@
 </p>
 <p>Signals may be either writable or read-only.</p>
 
-<h3 class="mt-5">Live example:</h3>
-<h3>Please open console!</h3>
+<app-live-example [openConsole]="true">
+  <div>
+    <app-input [ngModel]="text()" (ngModelChange)="text.set($event)"></app-input>
+    <p>I am the counter, click button below to increment me - {{ counter() }}</p>
+    <p>I am doubled counter - {{ doubleCounter() }}</p>
+    <p>I am the static counter, i will not increment - {{ staticCounter }}</p>
+    <p>I am computed text from input and counter - {{ textFromInputAndCounter() }}</p>
+    <p>I am the counter displayed as observable with async pipe - {{ counterObservable$ | async }}</p>
+    <p>I am the counter converted to signal from observable - {{ counterSignal() }}</p>
+  </div>
+  <app-button (click)="increment()">Increase counter</app-button>
 
-<div>
-  <app-input [ngModel]="text()" (ngModelChange)="text.set($event)"></app-input>
-  <p>I am the counter, click button below to increment me - {{ counter() }}</p>
-  <p>I am doubled counter - {{ doubleCounter() }}</p>
-  <p>I am the static counter, i will not increment - {{ staticCounter }}</p>
-  <p>I am computed text from input and counter - {{ textFromInputAndCounter() }}</p>
-  <p>I am the counter displayed as observable with async pipe - {{ counterObservable$ | async }}</p>
-  <p>I am the counter converted to signal from observable - {{ counterSignal() }}</p>
-</div>
-<app-button (click)="increment()">Increase counter</app-button>
-
-<h3 class="mt-5">Advanced topics examples:</h3>
-<app-signals-advanced-topics></app-signals-advanced-topics>
+  <h3 class="mt-5">Advanced topics examples:</h3>
+  <app-signals-advanced-topics></app-signals-advanced-topics>
+</app-live-example>

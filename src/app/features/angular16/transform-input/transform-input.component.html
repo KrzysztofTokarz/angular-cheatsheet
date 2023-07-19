@@ -1,16 +1,18 @@
 <p>Starting from Angular 16 there was new option added to @Input() property to define transform function</p>
 <p>It is useful when we want to validate our input and change all incoming values to one type</p>
-<p>We can use our own function or use already defined functions for simple use cases: booleanAttribute and numberAttribute </p>
+<p>
+  We can use our own function or use already defined functions for simple use cases:
+  <strong>booleanAttribute</strong> and <strong>numberAttribute</strong>
+</p>
 
-<h3 class="mt-5">Live example:</h3>
-<h3>Please open console!</h3>
-
-<div class="d-flex gap-2 flex-wrap">
-  <app-button (click)="value = null">Set as null</app-button>
-  <app-button (click)="value = undefined">Set as undefined</app-button>
-  <app-button (click)="value = 'true'">Set as "true" (string)</app-button>
-  <app-button (click)="value = 'false'">Set as "false" (string)</app-button>
-  <app-button (click)="value = true">Set as true (boolean)</app-button>
-  <app-button (click)="value = false">Set as false (boolean)</app-button>
-</div>
-<app-transform-input-example [alwaysBoolean]="value"></app-transform-input-example>
+<app-live-example [openConsole]="true">
+  <div class="d-flex gap-2 flex-wrap">
+    <app-button (click)="value = null">Set as null</app-button>
+    <app-button (click)="value = undefined">Set as undefined</app-button>
+    <app-button (click)="value = 'true'">Set as "true" (string)</app-button>
+    <app-button (click)="value = 'false'">Set as "false" (string)</app-button>
+    <app-button (click)="value = true">Set as true (boolean)</app-button>
+    <app-button (click)="value = false">Set as false (boolean)</app-button>
+  </div>
+  <app-transform-input-example class="mt-2" [alwaysBoolean]="value"></app-transform-input-example>
+</app-live-example>

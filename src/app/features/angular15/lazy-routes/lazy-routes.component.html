@@ -1,8 +1,13 @@
 <p>Starting from Angular 15 we can lazy load a set of routes as children</p>
 <p>Click buttons below to navigate between routes</p>
-<div class="d-flex gap-2">
-  <app-button routerLink="first-child">First child</app-button>
-  <app-button routerLink="second-child">Second child</app-button>
-  <app-button routerLink="third-child">Third child</app-button>
-</div>
-<router-outlet></router-outlet>
+<app-live-example>
+  <div class="d-flex gap-2">
+    <app-button routerLink="first-child">First child</app-button>
+    <app-button routerLink="second-child">Second child</app-button>
+    <app-button routerLink="third-child">Third child</app-button>
+    <app-button *ngIf="shouldShowResetBtn()" routerLink="./">Reset</app-button>
+  </div>
+  <div class="mt-2">
+    <router-outlet></router-outlet>
+  </div>
+</app-live-example>

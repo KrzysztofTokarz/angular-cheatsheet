@@ -1,39 +1,38 @@
 <p>
-  Angular v16 has introduced a new provider called DestroyRef, which allows for registering destroy callbacks for a
-  specific lifecycle scope. This feature is applicable to components, directives, pipes, embedded views, and instances
-  of EnvironmentInjector.
+  Angular v16 has introduced a new provider called <strong>DestroyRef</strong>, which allows for registering destroy
+  callbacks for a specific lifecycle scope. This feature is applicable to
+  <strong>components, directives, pipes, embedded views, and instances of EnvironmentInjector</strong>.
 </p>
 <p>
   It works the same way as ngOnDestroy lifecycle hook, but gives us more flexibility and allows to create reusable logic
 </p>
 <p>
-  One of usage examples is new rxjs operator provided by angular called "takeUntilDestroyed()", which significantly
-  improves a way of unsubscribe from observables.
+  One of usage examples is new rxjs operator provided by angular called "<strong>takeUntilDestroyed()</strong>", which
+  significantly improves a way of unsubscribe from observables.
 </p>
 
-<h3 class="mt-5">Live example:</h3>
-<h3>Please open console!</h3>
-
-<p class="mt-5">Click buttons below to toggle components visibility</p>
-<div class="d-flex justify-content-around mt-4">
-  <div class="example-wrapper">
-    <app-button (click)="showFirst = !showFirst">Show/hide</app-button>
-    <app-destroy-ref-first *ngIf="showFirst"></app-destroy-ref-first>
-    <p class="mt-1">In this case we don`t unsubsribe from observable, so our counter multiplies</p>
+<app-live-example [openConsole]="true">
+  <p>Click buttons below to toggle components visibility</p>
+  <div class="d-flex justify-content-around mt-4">
+    <div class="example-wrapper">
+      <app-button (click)="showFirst = !showFirst">Show/hide</app-button>
+      <app-destroy-ref-first class="mt-2" *ngIf="showFirst"></app-destroy-ref-first>
+      <p class="mt-1">In this case we don`t unsubsribe from observable, so our counter multiplies</p>
+    </div>
+    <div class="example-wrapper">
+      <app-button (click)="showSecond = !showSecond">Show/hide</app-button>
+      <app-destroy-ref-second class="mt-2" *ngIf="showSecond"></app-destroy-ref-second>
+      <p class="mt-1">In this case we unsubscribe in traditional way (using ngOnDestroy)</p>
+    </div>
+    <div class="example-wrapper">
+      <app-button (click)="showThird = !showThird">Show/hide</app-button>
+      <app-destroy-ref-third class="mt-2" *ngIf="showThird"></app-destroy-ref-third>
+      <p class="mt-1">In this case we unsubscribe by injecting DestroyRef</p>
+    </div>
+    <div class="example-wrapper">
+      <app-button (click)="showFourth = !showFourth">Show/hide</app-button>
+      <app-destroy-ref-fourth class="mt-2" *ngIf="showFourth"></app-destroy-ref-fourth>
+      <p class="mt-1">In this case we unsubscribe by using takeUntilDestroyed() rxjs operator</p>
+    </div>
   </div>
-  <div class="example-wrapper">
-    <app-button (click)="showSecond = !showSecond">Show/hide</app-button>
-    <app-destroy-ref-second *ngIf="showSecond"></app-destroy-ref-second>
-    <p class="mt-1">In this case we unsubscribe in traditional way (using ngOnDestroy)</p>
-  </div>
-  <div class="example-wrapper">
-    <app-button (click)="showThird = !showThird">Show/hide</app-button>
-    <app-destroy-ref-third *ngIf="showThird"></app-destroy-ref-third>
-    <p class="mt-1">In this case we unsubscribe by injecting DestroyRef</p>
-  </div>
-  <div class="example-wrapper">
-    <app-button (click)="showFourth = !showFourth">Show/hide</app-button>
-    <app-destroy-ref-fourth *ngIf="showFourth"></app-destroy-ref-fourth>
-    <p class="mt-1">In this case we unsubscribe by using takeUntilDestroyed() rxjs operator</p>
-  </div>
-</div>
+</app-live-example>
